@@ -5,8 +5,6 @@ from app.models import *
 # Create your views here.
 def home(request):
     user_code = request.session.get("user", None)
-    if user_code != None:
-        return redirect("/dash")
     if request.POST:
         mv = MessageVisiteur(
             nom=request.POST["name"],
